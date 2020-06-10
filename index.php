@@ -37,6 +37,7 @@ function writeData() {
     $contents = nl2br($contents);
 
     $data = "<hr>\n";
+    $data = $data."<p>投稿日時：".date("Y/m/d G:i:s")."</p>\n";
     $data = $data."<p>投稿者:".$personal_name."</p>\n";
     $data = $data."<p>内容:</p>\n";
     $data = $data."<p>".$contents."</p>\n";
