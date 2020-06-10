@@ -17,6 +17,7 @@
 
 <?php
 
+date_default_timezone_set(' Asia/Tokyo ');
 const THREAD_FILE = 'thread.txt';
 
 function readData() {
