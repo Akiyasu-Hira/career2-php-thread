@@ -9,12 +9,17 @@
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
     <input type="text" name="personal_name" placeholder="名前" required><br><br>
     <textarea name="contents" rows="8" cols="40" placeholder="内容" required>
-</textarea><br><br>
-    <input type="submit" name="btn1" value="投稿する">
+    </textarea><br><br>
+    <input type="submit" name="submitButton" value="投稿する">
+</form>
+
+<form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
+    <input type="hidden" name="method" value="DELETE">
+    <button type="submit">投稿を削除する</button>
 </form>
 
 <h2>スレッド</h2>
-<!--テストコメント-->
+
 <?php
 
 date_default_timezone_set( "Asia/Tokyo" );
@@ -58,6 +63,20 @@ function writeData() {
     }
 
     fclose($fp);
+
+}
+    
+
+    function deleteData() {
+        file_put_contents(THREAD_FILE,"");
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if (isset($_POST["method"]) && $_POST["method"] === "DELETE") {
+            deleteData();
+        } else {
+            writeData();
+        }
 
     //ブラウザのリロード対策
     $redirect_url = $_SERVER['HTTP_REFERER'];
