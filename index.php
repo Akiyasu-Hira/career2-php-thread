@@ -14,7 +14,7 @@
 </form>
 
 <h2>スレッド</h2>
-
+<!--テストコメント-->
 <?php
 
 date_default_timezone_set( "Asia/Tokyo" );
