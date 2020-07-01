@@ -19,7 +19,7 @@
 
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
     <input type="hidden" name="method" value="DELETE">
-    <button type="submit">投稿を削除する</button>
+    <input type="submit" name="submitButton" value="投稿を削除する"></input>
 </form>
 
 <h2>スレッド</h2>
