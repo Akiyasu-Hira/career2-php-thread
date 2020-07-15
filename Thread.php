@@ -46,3 +46,4 @@ class Thread
         $stmt->execute();
     }
 }
+?>
